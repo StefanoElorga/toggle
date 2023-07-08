@@ -1,0 +1,103 @@
+/* --------------------------------------------------------------------------------------------------------------- */
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap");
+
+.dark {
+  background: linear-gradient(rgb(111, 59, 111), rgb(2, 2, 75));
+}
+
+.light {
+  background: linear-gradient(rgb(243, 243, 255), rgb(74, 219, 255));
+}
+
+.my-label {
+  position: relative;
+  width: 500px;
+  height: 200px;
+  background-color: rgb(253, 233, 142);
+  border-radius: 200px;
+  box-shadow: inset 0px 10px 15px rgb(0, 0, 0, 0.5),
+    inset 0px -10px 15px rgb(0, 0, 0, 0.5);
+  transition: 0.5s;
+}
+
+.my-label::after {
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  border-radius: 180px;
+  background: linear-gradient(350deg, rgb(218, 160, 2), rgb(255, 251, 1));
+  content: "";
+  top: 10px;
+  left: 10px;
+  transition: 0.5s;
+}
+
+.my-input {
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+
+.my-input:checked ~ .my-label::after {
+  left: 490px;
+  transform: translateX(-100%);
+  transition: 0.5s;
+  background: linear-gradient(350deg, rgb(75, 75, 74), rgb(152, 152, 152));
+}
+
+.my-input:checked ~ .my-label {
+  background-color: rgb(66, 66, 66);
+  transition: 0.5s;
+}
+
+.moon {
+  position: absolute;
+  top: 80px;
+  left: -150px;
+  width: 140px;
+  height: 140px;
+  transition: 1s;
+}
+
+.my-input:checked ~ .moon {
+  top: 30px;
+  left: 30px;
+  transition: 1s;
+  opacity: 1;
+}
+
+.sun {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  width: 140px;
+  height: 140px;
+  opacity: 1;
+  transition: 1s;
+}
+
+.my-input:checked ~ .sun {
+  top: -160px;
+  left: 150px;
+  transition: 1s;
+}
+
+/* ----------------------------------------------------------------- */
+
+.container {
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Josefin Sans", sans-serif;
+}
